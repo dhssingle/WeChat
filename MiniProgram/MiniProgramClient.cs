@@ -78,8 +78,7 @@ namespace WeChat.MiniProgram
                     throw new Exception();
                 token = result
                 .Split(',')
-                .Where(t => t.Contains("access_token"))
-                .FirstOrDefault()
+                .FirstOrDefault(t => t.Contains("access_token"))
                 .Split(':')
                 .ElementAtOrDefault(1)
                 .Trim('"');
