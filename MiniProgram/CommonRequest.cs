@@ -7,13 +7,13 @@ namespace WeChat.MiniProgram
     public class CommonRequest : IRequest
     {
         protected HttpMethod httpMethod;
-        protected string uri;
+        protected string requestUri;
         public HttpMethod GetHttpMethod() => httpMethod;
-        public string GetRequestUri() => uri;
+        public string GetRequestUri() => requestUri;
 
         public string SetAccessToken(string accessToken)
         {
-            return uri += $"access_token={accessToken}";
+            return requestUri += $"access_token={accessToken}";
         }
 
         public string ToJson() => JsonConvert.SerializeObject(this, new JsonSerializerSettings

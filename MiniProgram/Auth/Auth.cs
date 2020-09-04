@@ -22,6 +22,16 @@ namespace WeChat.MiniProgram
         {
             return await _client.SendAsync<Code2SessionResponse>(request);
         }
+        /// <summary>
+        /// 用户支付完成后，获取该用户的 <see href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/union-id.html">UnionId</see>，无需用户授权。
+        /// 注意：调用前需要用户完成支付，且在支付后的五分钟内有效。
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<GetPaidUnionIdResponse> GetPaidUnionId(GetPaidUnionIdRequest request)
+        {
+            return await _client.SendAsync<GetPaidUnionIdResponse>(request);
+        }
         
     }
 }

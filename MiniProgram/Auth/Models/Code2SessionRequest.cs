@@ -8,7 +8,7 @@ namespace WeChat.MiniProgram
         public Code2SessionRequest()
         {
             httpMethod = HttpMethod.Get;
-            uri = "sns/jscode2session?";
+            requestUri = "sns/jscode2session?";
         }
         public Code2SessionRequest(string appId, string appSecret, string jsCode, string grantType) : this()
         {
