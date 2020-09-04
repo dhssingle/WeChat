@@ -38,6 +38,5 @@ namespace WeChat.MiniProgram
             return await _client.SendAsync<GetRetainResponse>(request);
         }
         #endregion
-        
     }
 }
