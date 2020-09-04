@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace WeChat.MiniProgram
 {
-    public class GetDailyRetainResponse : CommonResponse
+    public class GetRetainResponse : CommonResponse
     {
         /// <summary>
         /// 日期
