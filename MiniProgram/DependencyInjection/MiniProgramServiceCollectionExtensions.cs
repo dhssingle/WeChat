@@ -13,7 +13,9 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddHttpClient<MiniProgramClient>(c =>
             {
                 c.BaseAddress = new Uri("https://api.weixin.qq.com/");
-            })//.AddHttpMessageHandler<LoggingHttpMessageHandler>();
+            })
+            //.AddHttpMessageHandler<LoggingHttpMessageHandler>()
+            ;
             return services;
         }
     }
