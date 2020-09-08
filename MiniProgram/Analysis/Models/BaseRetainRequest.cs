@@ -1,4 +1,3 @@
-using System.Net.Http;
 using Newtonsoft.Json;
 
 namespace WeChat.MiniProgram
@@ -9,11 +8,11 @@ namespace WeChat.MiniProgram
         /// 开始日期。格式为 yyyymmdd
         /// </summary>
         [JsonProperty("begin_date")]
-        public string BeginDate { get; set; }
+        public string BeginDate { get; }
         /// <summary>
         /// 结束日期。格式为 yyyymmdd
         /// </summary>
         [JsonProperty("end_date")]
-        public string EndDate { get; set; }
+        public string EndDate { get; }
     }
 }
