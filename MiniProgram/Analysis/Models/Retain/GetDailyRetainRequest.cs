@@ -1,11 +1,13 @@
 using System.Net.Http;
-using Newtonsoft.Json;
 
 namespace WeChat.MiniProgram
 {
-    public class GetDailyRetainRequest : BaseRetainRequest
+    /// <summary>
+    /// 获取用户访问小程序日留存请求参数
+    /// </summary>
+    public class GetDailyRetainRequest : AnalysisRequest
     {
-        public GetDailyRetainRequest()
+        GetDailyRetainRequest()
         {
             httpMethod = HttpMethod.Post;
             requestUri = "datacube/getweanalysisappiddailyretaininfo?";

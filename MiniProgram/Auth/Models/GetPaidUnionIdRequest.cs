@@ -5,7 +5,7 @@ namespace WeChat.MiniProgram
 {
     public class GetPaidUnionIdRequest : CommonRequest
     {
-        public GetPaidUnionIdRequest()
+        GetPaidUnionIdRequest()
         {
             httpMethod = HttpMethod.Get;
             requestUri = "wxa/getpaidunionid";

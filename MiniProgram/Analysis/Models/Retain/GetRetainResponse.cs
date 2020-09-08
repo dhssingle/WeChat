@@ -2,6 +2,9 @@ using Newtonsoft.Json;
 
 namespace WeChat.MiniProgram
 {
+    /// <summary>
+    /// 访问留存返回值
+    /// </summary>
     public class GetRetainResponse : CommonResponse
     {
         /// <summary>

@@ -5,7 +5,7 @@ namespace WeChat.MiniProgram
 {
     public class Code2SessionRequest : CommonRequest
     {
-        public Code2SessionRequest()
+        Code2SessionRequest()
         {
             httpMethod = HttpMethod.Get;
             requestUri = "sns/jscode2session?";

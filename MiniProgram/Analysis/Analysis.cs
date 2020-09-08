@@ -13,7 +13,7 @@ namespace WeChat.MiniProgram
         /// <summary>
         /// 获取用户访问小程序日留存
         /// </summary>
-        /// <param name="request"><see cref="GetDailyRetainRequest"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
         public async Task<GetRetainResponse> GetDailyRetain(GetDailyRetainRequest request)
         {
@@ -22,7 +22,7 @@ namespace WeChat.MiniProgram
         /// <summary>
         /// 获取用户访问小程序周留存
         /// </summary>
-        /// <param name="request"><see cref="GetDailyRetainRequest"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
         public async Task<GetRetainResponse> GetWeeklyRetain(GetWeeklyRetainRequest request)
         {
@@ -31,12 +31,22 @@ namespace WeChat.MiniProgram
         /// <summary>
         /// 获取用户访问小程序月留存
         /// </summary>
-        /// <param name="request"><see cref="GetDailyRetainRequest"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
         public async Task<GetRetainResponse> GetMonthlyRetain(GetMonthlyRetainRequest request)
         {
             return await _client.SendAsync<GetRetainResponse>(request);
         }
         #endregion
+
+        /// <summary>
+        /// 获取用户访问小程序数据概况
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<GetDailySummaryResponse> GetDailySummary(GetDailySummaryRequest request)
+        {
+            return await _client.SendAsync<GetDailySummaryResponse>(request);
+        }
     }
 }

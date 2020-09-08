@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 
 namespace WeChat.MiniProgram
 {
-    public class Auth
+    public class Auth : IAuth
     {
         private readonly MiniProgramClient _client;
         public Auth(MiniProgramClient client)
@@ -31,4 +31,5 @@ namespace WeChat.MiniProgram
             return await _client.SendAsync<GetPaidUnionIdResponse>(request);
         }
     }
+
 }
