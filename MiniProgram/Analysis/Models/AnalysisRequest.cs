@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WeChat.MiniProgram
+namespace WeChat.MiniProgram.Analysis
 {
     public class AnalysisRequest : CommonRequest
     {

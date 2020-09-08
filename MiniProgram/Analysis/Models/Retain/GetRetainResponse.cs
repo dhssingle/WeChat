@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace WeChat.MiniProgram
+namespace WeChat.MiniProgram.Analysis
 {
     /// <summary>
     /// 访问留存返回值

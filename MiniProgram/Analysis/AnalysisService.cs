@@ -1,11 +1,11 @@
 using System.Threading.Tasks;
 
-namespace WeChat.MiniProgram
+namespace WeChat.MiniProgram.Analysis
 {
-    public class Analysis
+    public class AnalysisService : IAnalysisService
     {
         private readonly MiniProgramClient _client;
-        public Analysis(MiniProgramClient client)
+        public AnalysisService(MiniProgramClient client)
         {
             _client = client;
         }
@@ -48,5 +48,35 @@ namespace WeChat.MiniProgram
         {
             return await _client.SendAsync<GetDailySummaryResponse>(request);
         }
+        
+        #region 访问趋势
+        /// <summary>
+        /// 获取用户访问小程序数据日趋势
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<GetDailyVisitTrendResponse> GetDailyVisitTrend(GetDailyVisitTrendRequest request)
+        {
+            return await _client.SendAsync<GetDailyVisitTrendResponse>(request);
+        }
+        /// <summary>
+        /// 获取用户访问小程序数据周趋势
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<GetWeeklyVisitTrendResponse> GetWeeklyVisitTrend(GetWeeklyVisitTrendRequest request)
+        {
+            return await _client.SendAsync<GetWeeklyVisitTrendResponse>(request);
+        }
+        /// <summary>
+        /// 获取用户访问小程序数据月趋势(能查询到的最新数据为上一个自然月的数据)
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<GetMonthlyVisitTrendResponse> GetMonthlyVisitTrend(GetMonthlyVisitTrendRequest request)
+        {
+            return await _client.SendAsync<GetMonthlyVisitTrendResponse>(request);
+        }
+        #endregion
     }
 }

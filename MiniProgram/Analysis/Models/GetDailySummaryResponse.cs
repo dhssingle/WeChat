@@ -1,4 +1,4 @@
-namespace WeChat.MiniProgram
+namespace WeChat.MiniProgram.Analysis
 {
     using Newtonsoft.Json;
     /// <summary>
@@ -7,18 +7,30 @@ namespace WeChat.MiniProgram
     public class GetDailySummaryResponse : CommonResponse
     {
         [JsonProperty("list")]
-        public List[] List { get; set; }
+        public GetDailySummaryResponseResult[] List { get; set; }
     }
-    public partial class List
+    public partial class GetDailySummaryResponseResult
     {
+        /// <summary>
+        /// 日期，格式为 yyyymmdd
+        /// </summary>
         [JsonProperty("ref_date")]
         public string RefDate { get; set; }
+        /// <summary>
+        /// 累计用户数
+        /// </summary>
 
         [JsonProperty("visit_total")]
         public long VisitTotal { get; set; }
+        /// <summary>
+        /// 转发次数
+        /// </summary>
 
         [JsonProperty("share_pv")]
         public long SharePv { get; set; }
+        /// <summary>
+        /// 转发人数
+        /// </summary>
 
         [JsonProperty("share_uv")]
         public long ShareUv { get; set; }

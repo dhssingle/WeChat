@@ -1,6 +1,6 @@
 using System.Net.Http;
 
-namespace WeChat.MiniProgram
+namespace WeChat.MiniProgram.Analysis
 {
     /// <summary>
     /// 获取用户访问小程序周留存请求参数

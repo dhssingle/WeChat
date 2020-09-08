@@ -1,4 +1,4 @@
-﻿namespace WeChat.MiniProgram
+﻿namespace WeChat.MiniProgram.Analysis
 {
     /// <summary>
     /// 获取用户访问小程序数据概况请求参数
