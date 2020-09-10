@@ -3,6 +3,7 @@
 using System;
 using Microsoft.Extensions.Http.Logging;
 using WeChat.MiniProgram;
+using WeChat.MiniProgram.AuthApi;
 
 namespace Microsoft.Extensions.DependencyInjection
 {
