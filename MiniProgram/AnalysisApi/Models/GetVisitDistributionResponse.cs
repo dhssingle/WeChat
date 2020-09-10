@@ -45,7 +45,7 @@ namespace WeChat.MiniProgram.AnalysisApi
         /// <summary>
         /// 访问深度的分布
         /// </summary>
-        access_depth_info
+        access_depth_info,
     }
 
     public class GetVisitDistributionResponseItem

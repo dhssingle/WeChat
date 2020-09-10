@@ -12,6 +12,7 @@ namespace WeChat.MiniProgram.AnalysisApi
         Task<GetWeeklyVisitTrendResponse> GetWeeklyVisitTrend(GetWeeklyVisitTrendRequest request);
         Task<GetMonthlyVisitTrendResponse> GetMonthlyVisitTrend(GetMonthlyVisitTrendRequest request);
         Task<GetUserPortraitResponse> GetUserPortrait(GetUserPortraitRequeset request);
+        Task<GetVisitPageResponse> GetVisitPage(GetVisitPageRequest request);
         
     }
 }

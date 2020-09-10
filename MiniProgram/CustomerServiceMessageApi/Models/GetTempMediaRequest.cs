@@ -22,6 +22,6 @@ namespace WeChat.MiniProgram.CustomerServiceMessageApi
         /// 媒体文件 ID
         /// </summary>
         [JsonProperty("media_id")]
-        public string MediaId { get; set; }
+        public string MediaId { get; }
     }
 }

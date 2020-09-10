@@ -28,5 +28,14 @@ namespace WeChat.MiniProgram.CustomerServiceMessageApi
         {
             return await _client.SendAsync<CustomerServiceMessageSendResponse>(request);
         }
+        /// <summary>
+        /// 下发客服当前输入状态给用户。详见 <see href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/customer-message/typing.html">客服消息输入状态</see>
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<SetTypingResponse> SetTyping(SetTypingRequest request)
+        {
+            return await _client.SendAsync<SetTypingResponse>(request);
+        }
     }
 }
