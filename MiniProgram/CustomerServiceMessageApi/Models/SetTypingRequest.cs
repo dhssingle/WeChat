@@ -8,7 +8,7 @@ namespace WeChat.MiniProgram.CustomerServiceMessageApi
         public SetTypingRequest(string toUser, SetTypingCommand command)
         {
             httpMethod = HttpMethod.Post;
-            requestUri = "cgi-bin/message/custom/typing?"
+            requestUri = "cgi-bin/message/custom/typing?";
 
             ToUser = toUser;
             Command = command;
