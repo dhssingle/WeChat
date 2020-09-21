@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using System;
 using WeChat.MiniProgram;
-using WeChat.MiniProgram.AnalysisApi;
+using WeChat.MiniProgram.Services;
 using WeChat.MiniProgram.AuthApi;
 
 namespace Microsoft.Extensions.DependencyInjection
@@ -28,7 +28,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 c.BaseAddress = new Uri("https://api.weixin.qq.com/");
             });
             services.AddTransient<IAuth, Auth>();
-            services.AddTransient<IAnalysis, Analysis>();
+            services.AddTransient<AnalysisService>();
         }
 
     }
