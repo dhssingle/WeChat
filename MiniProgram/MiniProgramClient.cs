@@ -1,3 +1,4 @@
+using System.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,21 +17,21 @@ namespace WeChat.MiniProgram
 {
     public class MiniProgramClient
     {
-        private readonly HttpClient _client;
+        public HttpClient Client { get; }
         private readonly IDistributedCache _distributedCache;
         private readonly MiniProgramOptions _options;
         public MiniProgramClient(HttpClient client, IDistributedCache distributedCache, IOptions<MiniProgramOptions> optionsAccessor)
         {
-            _client = client;
+            Client = client;
             _distributedCache = distributedCache;
             _options = optionsAccessor.Value;
-        } 
+        }
         public async Task<IResponse> SendAsync<IResponse>(IRequest request, bool needAccessToken = true)
         {
             if (needAccessToken)
                 request.SetAccessToken(await GetAccessToken());
             var message = BuildRequestMessage(request);
-            var responseMessage = await _client.SendAsync(message);
+            var responseMessage = await Client.SendAsync(message);
             return JsonConvert.DeserializeObject<IResponse>(await responseMessage.Content.ReadAsStringAsync());
         }
         private HttpRequestMessage BuildRequestMessage(IRequest request)
@@ -40,7 +41,7 @@ namespace WeChat.MiniProgram
                 return BuildGetRequestMessage(request);
             }
             else
-            { 
+            {
                 return BuildPostRequestMessage(request);
             }
         }
@@ -72,12 +73,12 @@ namespace WeChat.MiniProgram
             }
             return sb.ToString().TrimEnd('&');
         }
-        private async Task<string> GetAccessToken()
+        public async Task<string> GetAccessToken()
         {
             var token = await _distributedCache.GetStringAsync("access_token");
             if (string.IsNullOrEmpty(token))
             {
-                var result = await _client.GetStringAsync($"cgi-bin/token?grant_type=client_credential&appid={_options.AppId}&secret={_options.AppSecret}");
+                var result = await Client.GetStringAsync($"cgi-bin/token?grant_type=client_credential&appid={_options.AppId}&secret={_options.AppSecret}");
                 if (!result.Contains("access_token"))
                     throw new Exception();
                 token = result

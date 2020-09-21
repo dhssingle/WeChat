@@ -1,8 +1,10 @@
-﻿using System;
+﻿using System.Net.Http;
+using System;
 using System.Threading.Tasks;
 
 using WeChat.MiniProgram.Models.Requests.CustomerServiceMessage;
 using WeChat.MiniProgram.Models.Responses.CustomerServiceMessage;
+using Newtonsoft.Json;
 
 namespace WeChat.MiniProgram.Services
 {
@@ -48,7 +50,16 @@ namespace WeChat.MiniProgram.Services
         /// <returns></returns>
         public async Task<UploadTempMediaResponse> UploadTempMedia(UploadTempMediaRequest request)
         {
-            throw new NotImplementedException();
+            request.SetAccessToken(await _client.GetAccessToken());
+            var requestMessage = new HttpRequestMessage(request.GetHttpMethod(), request.GetRequestUri() + "&type=" + request.Type)
+            {
+                Content = new MultipartFormDataContent
+                {
+                    { new StreamContent(request.Media), "imageFile", "image" }
+                }
+            };
+            var response = await _client.Client.SendAsync(requestMessage);
+            return JsonConvert.DeserializeObject<UploadTempMediaResponse>(await response.Content.ReadAsStringAsync());
         }
     }
 }
