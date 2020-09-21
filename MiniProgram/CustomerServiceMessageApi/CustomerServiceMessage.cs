@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 
 namespace WeChat.MiniProgram.CustomerServiceMessageApi
@@ -36,6 +37,15 @@ namespace WeChat.MiniProgram.CustomerServiceMessageApi
         public async Task<SetTypingResponse> SetTyping(SetTypingRequest request)
         {
             return await _client.SendAsync<SetTypingResponse>(request);
+        }
+        /// <summary>
+        /// 把媒体文件上传到微信服务器。目前仅支持图片。用于发送客服消息或被动回复用户消息。
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public async Task<UploadTempMediaResponse> UploadTempMedia(UploadTempMediaRequest request)
+        {
+            throw new NotImplementedException();
         }
     }
 }

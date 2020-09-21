@@ -20,7 +20,7 @@ namespace WeChat.MiniProgram
             _client = client;
             _distributedCache = distributedCache;
             _options = optionsAccessor.Value;
-        }
+        } 
         public async Task<IResponse> SendAsync<IResponse>(IRequest request, bool needAccessToken = true)
         {
             if (needAccessToken)
@@ -36,7 +36,7 @@ namespace WeChat.MiniProgram
                 return BuildGetRequestMessage(request);
             }
             else
-            {
+            { 
                 return BuildPostRequestMessage(request);
             }
         }

@@ -11,10 +11,7 @@ namespace WeChat.MiniProgram
         public HttpMethod GetHttpMethod() => httpMethod;
         public string GetRequestUri() => requestUri;
 
-        public string SetAccessToken(string accessToken)
-        {
-            return requestUri += $"access_token={accessToken}";
-        }
+        public string SetAccessToken(string accessToken) => requestUri += $"access_token={accessToken}";
 
         public string ToJson() => JsonConvert.SerializeObject(this, new JsonSerializerSettings
         {
