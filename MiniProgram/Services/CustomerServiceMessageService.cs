@@ -2,8 +2,8 @@
 using System;
 using System.Threading.Tasks;
 
-using WeChat.MiniProgram.Models.Requests.CustomerServiceMessage;
-using WeChat.MiniProgram.Models.Responses.CustomerServiceMessage;
+using WeChat.MiniProgram.Models.CustomerServiceMessage;
+using WeChat.MiniProgram.Models.CustomerServiceMessage;
 using Newtonsoft.Json;
 
 namespace WeChat.MiniProgram.Services
