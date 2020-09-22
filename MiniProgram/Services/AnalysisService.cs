@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using WeChat.MiniProgram.Models.Analysis;
-using WeChat.MiniProgram.Models.Analysis;
 
 namespace WeChat.MiniProgram.Services
 {
