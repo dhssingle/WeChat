@@ -8,12 +8,12 @@ namespace WeChat.MiniProgram.Models.SubscribeMessage
         /// 构造函数
         /// </summary>
         /// <param name="TId">模板标题 id，可通过接口获取</param>
-        public GetPubTemplateKeyWordsByIdRequest(string TId)
+        public GetPubTemplateKeyWordsByIdRequest(string tId)
         {
             httpMethod = System.Net.Http.HttpMethod.Get;
             requestUri = "wxaapi/newtmpl/getpubtemplatekeywords";
 
-            TId = TId;
+            TId = tId;
         }
 
         /// <summary>

@@ -1,6 +1,5 @@
 using System.Threading.Tasks;
 using WeChat.MiniProgram.Models.UniformMessage;
-using WeChat.MiniProgram.Models.UniformMessage;
 
 namespace WeChat.MiniProgram.Services
 {

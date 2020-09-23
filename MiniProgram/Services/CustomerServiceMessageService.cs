@@ -1,8 +1,6 @@
 ﻿using System.Net.Http;
-using System;
 using System.Threading.Tasks;
 
-using WeChat.MiniProgram.Models.CustomerServiceMessage;
 using WeChat.MiniProgram.Models.CustomerServiceMessage;
 using Newtonsoft.Json;
 

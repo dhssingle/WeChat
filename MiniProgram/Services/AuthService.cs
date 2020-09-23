@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using WeChat.MiniProgram.Models.Auth;
-using WeChat.MiniProgram.Models.Auth;
 
 namespace WeChat.MiniProgram.Services
 {
